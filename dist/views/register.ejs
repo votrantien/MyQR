@@ -1,0 +1,208 @@
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <% if(!newMember?._id) { %>
+    <!-- reg aria -->
+    <div class="container">
+      <header class="header">
+        <h1 id="title" class="text-center">
+          Đăng ký tham gia Tọa đàm Vật liệu xanh 2023
+        </h1>
+        <p id="description" class="description">
+          Tọa đàm vật liệu xanh 2023 là một sự kiện thú vị và hấp dẫn, nhằm cung
+          cấp cho các sinh viên chuyên ngành kiến trúc và xây dựng một diễn đàn
+          để tìm hiểu về những xu hướng, công nghệ và ứng dụng mới trong lĩnh
+          vực vật liệu xanh. Tại tọa đàm, sinh viên có cơ hội được nghe những
+          chia sẻ kinh nghiệm, thảo luận và trao đổi ý tưởng về việc sử dụng vật
+          liệu xanh trong các công trình, dự án xanh của các diễn giả sau:
+          <br />
+          <br />
+          <strong>
+            - Mr/Mrs: Giáo viên trường ĐH VL Khoa Kiến Trúc
+            <br />
+            - Mr. Ismael Gulser (From TWOG)
+            <br />
+            - Mr. Mett Young (From Studio 3eight)
+          </strong>
+          <br />
+          <br />
+          Ngoài ra, đây cũng là dịp để sinh viên chia sẻ những công trình nghiên
+          cứu hoặc dự án thực tiễn của mình, đồng thời nhận được phản hồi, ý
+          kiến đóng góp từ các chuyên gia và sinh viên khác. Điều này giúp sinh
+          viên nâng cao kiến thức, kỹ năng và mở rộng mạng lưới giao tiếp trong
+          xu hướng phát triển ngày càng mạnh mẽ của công trình xanh.
+          <br />
+        </p>
+        Thông tin sự kiện:
+        <ul>
+          <li>Thời gian: 26/05/2023</li>
+          <li>Hình thức: trực tiếp</li>
+          <li>Thông tin liên hệ: 0919 39 63 68</li>
+          <li>
+            Fanpage:
+            <a href="https://www.facebook.com/kncfacade" style="color: #fff"
+              >kncfacade</a
+            >
+          </li>
+          <li>Email: info@kncvn.com</li>
+        </ul>
+      </header>
+      <form id="reg-form" method="POST" action="/register">
+        <div class="form-group">
+          <label id="name-label" for="name">Họ và tên</label>
+          <input
+            type="text"
+            name="fullName"
+            id="fullName"
+            class="form-control"
+            placeholder="Điền họ và tên"
+            value="vo tran tien"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <p>Giới tính</p>
+          <label>
+            <input
+              name="gender"
+              value="male"
+              type="radio"
+              class="input-radio"
+              checked
+            />Nam</label
+          >
+          <label>
+            <input
+              name="gender"
+              value="female"
+              type="radio"
+              class="input-radio"
+            />Nữ</label
+          >
+
+          <label
+            ><input
+              name="gender"
+              value="other"
+              type="radio"
+              class="input-radio"
+            />Khác</label
+          >
+        </div>
+        <div class="form-group">
+          <label id="dob-label" for="dob"
+            >Ngày sinh <span class="clue">(optional)</span></label
+          >
+          <input type="date" name="dob" id="dob" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label id="email-label" for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Điền địa chỉ email"
+            value="votrantienga@ymail.com"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="phone-label" for="phone">Số điện thoại: </label>
+          <input
+            type="text"
+            name="phone"
+            id="phone"
+            class="form-control"
+            placeholder="Điền số điện thoại"
+            value="03234230420"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="major-label" for="major">Chuyên ngành: </label>
+          <input
+            type="text"
+            name="major"
+            id="major"
+            class="form-control"
+            placeholder="Điền chuyên ngành"
+            value="it"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="school-label" for="school">Bạn học trường nào: </label>
+          <input
+            type="text"
+            name="school"
+            id="school"
+            class="form-control"
+            placeholder="Tên trường học"
+            value="ckc"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="studentCode-label" for="studentCode"
+            >Mã số sinh viên:
+          </label>
+          <input
+            type="text"
+            name="studentCode"
+            id="studentCode"
+            class="form-control"
+            placeholder="Mã số sinh viên"
+            value="34573457834"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label id="numberOfPeople-label" for="numberOfPeople"
+            >Số lượng đăng ký tham gia</label
+          >
+          <input
+            type="number"
+            name="numberOfPeople"
+            id="numberOfPeople"
+            min="1"
+            max="99"
+            class="form-control"
+            value="1"
+          />
+        </div>
+
+        <div class="form-group">
+          <button type="submit" id="submit" class="submit-button">
+            Đăng ký
+          </button>
+        </div>
+      </form>
+    </div>
+    <% } else { %>
+    <div class="container">
+      <div class="qrcode-area">
+        <h1 id="title" class="text-center">
+          Xin chào! <%= newMember?.fullName %>
+        </h1>
+        <br />
+        <p id="description" class="description">
+          Tải xuống mã QR code này hoặc chụp ảnh màn hình lại, khi đi đem theo
+          mã QR này để kiểm tra
+        </p>
+        <img src="<%= qr_code %>" alt="" class="qrcode-img" />
+        <br />
+        <a href="<%= qr_code %>" download="qrcode.png" class="qrcode-download"
+          >Tải QR Code</a
+        >
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <% if(member?._id) { %>
+    <!-- reg aria -->
+    <div class="container member-area">
+      <header class="header">
+        <img src="/img/Sign-check-icon.png" alt="" class="check-icon" />
+        <h1 class="check-title">Hợp lệ</h1>
+      </header>
+      <div class="member-info">
+        <ul class="info-list">
+          <li class="info-item">
+            <span>Họ tên:</span> <span><%= member?.fullName %></span>
+          </li>
+          <li class="info-item">
+            <span>Giới tính:</span> <span><%= member?.gender %></span>
+          </li>
+          <li class="info-item">
+            <span>Số điện thoại:</span> <span><%= member?.phone %></span>
+          </li>
+          <li class="info-item">
+            <span>Email:</span> <span><%= member?.email %></span>
+          </li>
+          <li class="info-item">
+            <span>Chuyên ngành:</span><span><%= member?.major %></span>
+          </li>
+          <li class="info-item">
+            <span>Trường: </span><span><%= member?.school %></span>
+          </li>
+          <li class="info-item">
+            <span>MSSV: </span><span><%= member?.studentCode %></span>
+          </li>
+          <li class="info-item">
+            <span>Số người đăng ký: </span
+            ><span><%= member?.numberOfPeople %></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <% } else { %>
+    <div class="container member-area">
+      <header class="header">
+        <img src="/img/sign-red-error-icon.png" alt="" class="check-icon" />
+        <h1 class="check-title">Không Hợp Lệ</h1>
+      </header>
+    </div>
+    <% } %>
+  </body>
+</html>
